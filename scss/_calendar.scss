@@ -1,0 +1,102 @@
+/* --- Calendar --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+#tribe-events-content {}
+#tribe-events-calendar-header {
+
+	.tribe-events-month-nav {
+		overflow: hidden;
+
+		& > span, & > form {
+			float: left; 
+		}
+
+		& > span {
+			width: 20%; 
+		}
+
+		& > form {
+			width: 60%;
+			padding: 0 0 1em 8em;
+			overflow: hidden; 
+		}
+
+		.tribe-events-prev-month {}
+		.tribe-events-next-month { text-align: right; }
+	}
+
+	form select {
+		float: left;
+		width: 30%;
+		margin: 0 1%; 
+	}
+
+	.tribe-events-calendar-buttons { display: none; }
+}
+
+table.tribe-events-calendar {
+	width: 100%;
+	table-layout: fixed;
+	border-spacing: 0;
+	margin-bottom: 2em; 
+	border-top: 1px solid #CCC;
+	border-left: 1px solid #CCC;
+
+	td, th {
+		border: 1px solid #CCC;
+		border-left-color: #FFF;
+		border-top-color: #FFF;
+	}
+
+	thead {
+		th { background: #CCC;  }
+	}
+
+	tbody {
+		td { 
+			height: 90px;
+			min-height: 90px;
+			vertical-align: top;
+			.daynum { 
+				font-size: 0.8em;
+				line-height: 1em; 
+				padding: 0.2em 0.6em 0.4em 0;
+				text-align: right;
+				background: rgba(0, 0, 0, 0.05);
+				border-bottom: 1px solid #F8F8F8; 				
+			}
+
+			/*tribe_events type-tribe_events status-publish hentry tribe-events-event tribe-events-real-event cat_-2*/
+			.tribe_events {
+				position: relative;
+
+				& > a { display: block; font-size: 0.9em; white-space: nowrap; overflow: hidden; }
+				& > .tribe-events-tooltip {
+					width: 320px;
+				   	height: auto; 
+					position: absolute;
+					left: -35%; bottom: 15px;
+					padding: 1em 1.3em; 
+					background: #F6F6F6;
+					/*border: 1px solid #CCC;*/
+					border-radius: 8px;
+
+					@include box-shadow(#666 0 0 10px);
+					
+					.tribe-events-event-date { display: block; border-bottom: 1px dashed #CCC; padding-bottom: 0.5em; margin-bottom: 0.5em;  }
+					.tribe-events-event-body { line-height: 1.2em; }
+				}
+			}
+
+			&.tribe-events-present {
+				background: rgba(255, 255, 255, 0.8);; 
+			}
+
+			.tribe-events-event { }
+			
+			.tribe-events-tooltip { }
+			.tribe-events-arrow { }
+		}
+	}
+
+}
+
