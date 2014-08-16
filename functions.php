@@ -27,7 +27,7 @@ function nuveze_setup() {
 	 * If you're building a theme based on nuveze, use a find and replace
 	 * to change 'nuveze' to the name of your theme in all the template files
 	 */
-	//load_theme_textdomain( 'nuveze', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'nuveze', get_template_directory() . '/languages' );
 
 	/**
 	 * Add default posts and comments RSS feed links to head
@@ -39,7 +39,7 @@ function nuveze_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
 
 	/**
 	 * This theme uses wp_nav_menu() in one location.
@@ -47,19 +47,6 @@ function nuveze_setup() {
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'nuveze' ),
 	) );
-
-	/**
-	 * Enable support for Post Formats
-	 */
-	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
-
-	/**
-	 * Setup the WordPress core custom background feature.
-	 */
-	//add_theme_support( 'custom-background', apply_filters( 'nuveze_custom_background_args', array(
-		//'default-color' => 'ffffff',
-		//'default-image' => '',
-	//) ) );
 }
 endif; // nuveze_setup
 add_action( 'after_setup_theme', 'nuveze_setup' );
@@ -83,11 +70,20 @@ add_action( 'widgets_init', 'nuveze_widgets_init' );
  * Enqueue scripts and styles
  */
 function nuveze_scripts() {
+	wp_enqueue_style( 'nuveze-font-awesome', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' );
+
 	wp_enqueue_style( 'nuveze-style', get_template_directory_uri() . '/css/app.css' );
+
+	wp_enqueue_script( 'nuveze-fittext', get_template_directory_uri() . '/js/jquery.fittext.js', array('jquery') );
+
+	wp_enqueue_script( 'nuveze-floatlabel', get_template_directory_uri() . '/js/jquery.FloatLabel.js', array('jquery') );
+
+	wp_enqueue_script( 'nuveze-app', get_template_directory_uri() . '/js/app.js', array('jquery') );
 
 	wp_enqueue_script( 'nuveze-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'nuveze-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

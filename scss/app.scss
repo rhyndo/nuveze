@@ -1,93 +1,46 @@
-/* Variables */
-$widthContainer: 980px;
-$widthMinContainer: 980px;
-
-$colorBgrdBody: #272727;
-$colorBgrdHeader: #272727;
-$colorBgrdFooter: #272727;
-$colorBgrdContent: #FFF;
-
-$colorLinkHover:	#C00;
-$colorLinkNormal:	#C00;
-$colorLinkActive:	#C00;
-$colorLinkVisited:	#C00;
-$colorLinkFocus:	#C00;
-
-$colorBorderMain: #CCC;
-$colorBorderSecondary: #FFF;
-
-/* Compass */
+/* --- Imports --- --- --- --- --- --- --- --- --- --- --- --- --- */
 @import "compass";
+@import "susy";
+@import "breakpoint";
 
-/* Custom imports */
-@import "_typography";
-@import "_forms";
-@import "_avatars";
-@import "_calendar";
-@import "_mediaqueries";
+@import "reset";
+@import "colors";
+@import "typography";
+@import "forms";
+@import "buttons";
+@import "buttons-theme";
 
-* { margin: 0; padding: 0; }
-.debug { white-space: pre; padding: 2em; }
+@import "layout";
+@import "navigation";
+@import "hentry";
+@import "home";
 
-body { background: $colorBgrdBody; }
-hr { display: none; }
-a { @include hover-link; @include link-colors($colorLinkNormal, $colorLinkHover, $colorLinkActive, $colorLinkVisited, $colorLinkFocus); }
-.cleaner { display: block; clear: both; height: 0;  overflow: hidden; } 
+@include border-box-sizing;
 
+/* --- Stuff --- --- --- --- --- --- --- --- --- --- --- --- --- */
+body {
+	background: url("../images/brushed_alu/brushed_alu.png");
+	color: #444;
+} 
 
-.wrapper {
-	width: $widthContainer;
-	margin: 0 auto; 
-	padding: 2em 0;
-	overflow: hidden; 
+a { 
+	text-decoration: none;
+	color: #369;
 }
 
-#masthead, #colophon { 
-	background: $colorBgrdHeader;
-
-	&, a { color: #EEE;	}
-
-	.site-title { font-size: 4em; margin: 0; line-height: 1; }
-	.site-description { font-size: 2em; }
-
-	.menu {
-		padding: 0.5em; margin: 1em 0 0 0; background: #EEE; 
-
-		li {
-			display: inline-block; list-style: none outside; padding: 0;  margin: 0; 
-
-			a { padding: 0 0.5em; color: #888; }
-			&.current-menu-item a, a:hover { color: #000;  }
-		}
-	}
+.site-branding { 
+	@include text-shadow(rgba(white, 0.6) 2px 2px 0);
 }
 
-#content {
-	background: $colorBgrdContent; 
+.site-title,
+.site-description { 
+	line-height: 1;
+	margin: 0;
+	font-weight: 500;
 }
 
-#primary {
-	width: 70%;
-	float: left; 
+.site-description { 
+	font-weight: normal;
+	color: #666;
+	font-weight: 300;
 }
-
-#secondary {
-	width: 30%; 
-	float: left;
-}
-
-article.post {
-	padding: 0 3em 4em 0; 
-
-	&:last-child { padding-bottom: 0; }
-	
-	.entry-meta {
-		margin-bottom: 1em; font-size: 0.9em; 
-
-		.updated, .byline { display: none; }
-	}
-
-	footer.entry-meta { display: none; }
-}
-
-

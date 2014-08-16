@@ -1,0 +1,57 @@
+$turquoise                    : rgba(26,188,156,1);
+$emerland                     : rgba(46,204,113,1);
+$peterriver                   : rgba(52,152,219,1);
+$amethyst                     : rgba(155,89,182,1);
+$wetasphalt                   : rgba(52,73,94,1);
+$greensea                     : rgba(22,160,133,1);
+$nephritis                    : rgba(39,174,96,1);
+$belizehole                   : rgba(41,128,185,1);
+$wisteria                     : rgba(142,68,173,1);
+$midnightblue                 : rgba(44,62,80,1);
+$sunflower                    : rgba(241,196,15,1);
+$carrot                       : rgba(230,126,34,1);
+$alizarin                     : rgba(231,76,60,1);
+$clouds                       : rgba(236,240,241,1);
+$concrete                     : rgba(149,165,166,1);
+$orange                       : rgba(243,156,18,1);
+$pumpkin                      : rgba(211,84,0,1);
+$pomegranate                  : rgba(192,57,43,1);
+$silver                       : rgba(189,195,199,1);
+$asbestos                     : rgba(127,140,141,1);
+
+//Hex values
+
+$turquoise                    : #1ABC9C;
+$green-sea                    : #16A085;
+$emerland                     : #2ECC71;
+$nephritis                    : #27AE60;
+$peter-river                  : #3498DB;
+$belize-hole                  : #2980B9;
+$amethyst                     : #9B59B6;
+$wisteria                     : #8E44AD;
+$wet-asphalt                  : #34495E;
+$midnight-blue                : #2C3E50;
+$sun-flower                   : #F1C40F;
+$orange                       : #F39C12;
+$carrot                       : #E67E22;
+$pumpkin                      : #D35400;
+$alizarin                     : #E74C3C;
+$pomegranate                  : #C0392B;
+$clouds                       : #ECF0F1;
+$silver                       : #BDC3C7;
+$concrete                     : #95A5A6;
+$asbestos                     : #7F8C8D;
+
+/*
+ * http://codepen.io/JasonWaller/pen/sGpib
+ */
+
+@mixin bgrd_zigzag(){
+	background: 
+	linear-gradient(135deg, #ECEDDC 25%, transparent 25%) -50px 0,
+	linear-gradient(225deg, #ECEDDC 25%, transparent 25%) -50px 0,
+	linear-gradient(315deg, #ECEDDC 25%, transparent 25%),
+	linear-gradient(45deg, #ECEDDC 25%, transparent 25%);	
+	background-size: 100px 100px;
+	background-color: #EC173A;
+}

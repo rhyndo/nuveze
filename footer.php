@@ -1,5 +1,12 @@
 		</div><!-- #content -->
 
+		<?php if(is_front_page()) { ?>
+			<div id="registration">
+				<?php $meta = get_post_meta(get_the_ID()); ?>
+				<?php echo wpautop(do_shortcode($meta["registration"][0])); ?>
+			</div>
+		<?php } ?>
+
 		<footer id="colophon" class="site-footer" role="contentinfo">
 
 			<div class="wrapper">

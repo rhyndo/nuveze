@@ -1,0 +1,86 @@
+/*************************************
+ * CONFIG
+ */
+
+$green: #abc63d;
+$blue: #56a5da;
+$red: #ea8557;
+$purple: #8e44ad;
+$mint: #16a085;
+$orange: #ffb700;
+$facebook: #0869ad;
+$edit: #27ae60;
+$delete: #CC0000;
+$add: #abc63d;
+
+
+/*************************************
+ * BUTTON THEME
+ */
+
+.button {
+	display: inline-block;
+	background: $green;
+	border: 0;
+	padding: 0.5em 1.2em;
+	font-size: 1em;
+	cursor: pointer;
+	color: #fff;
+	border-radius: 0.3em;
+
+	-webkit-appearance: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+	&:hover {
+		background-color: darken($green, 10);
+	}
+
+	@include buttonColor( 'green', $green );
+	@include buttonColor( 'blue', $blue );
+	@include buttonColor( 'red', $red );
+	@include buttonColor( 'purple', $purple );
+	@include buttonColor( 'mint', $mint );
+	@include buttonColor( 'facebook', $facebook );
+	@include buttonColor( 'orange', $orange );
+	@include buttonColor( 'edit', $edit );
+	@include buttonColor( 'delete', $delete );
+	@include buttonColor( 'add', $add );
+
+	&[disabled],
+	&[data-loading] {
+		border-color: rgba( 0, 0, 0, 0.07 );
+		cursor: default;
+		background-color: #999;
+
+		&:hover {
+			cursor: default;
+			background-color: #999;
+		}
+	}
+
+	&[data-size=xs] {
+		padding: 0.1em 0.8em;
+
+
+		&, .label {
+			font-size: 0.8em;
+		}
+	}
+
+	&[data-size=s] {
+		padding: 0.2em 0.9em;
+
+		&, .label {
+			font-size: 0.8em;
+		}
+	}
+
+	&[data-size=l] .label {
+		font-size: 1.2em;
+	}
+
+	&[data-size=xl] .label {
+		font-size: 1.5em;
+	}
+
+}

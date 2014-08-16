@@ -1,0 +1,72 @@
+/* --- Layout --- --- --- --- --- --- --- --- --- --- --- --- --- */
+
+$susy: (
+	global-box-sizing: border-box,
+	columns: 12,
+	gutters: 0,
+	math: fluid,
+	output: float,
+	gutter-position: inside,
+);
+
+body {
+	min-width: 320px;
+	padding: 1em;
+
+	@include breakpoint(768px) {
+		padding: 3em;
+	}
+}
+
+.site {
+
+	@include breakpoint(1440px) {
+		max-width: 1400px;
+		margin: auto;
+	}
+
+}
+
+.site-content {
+	@include container;
+	@include clearfix; 
+
+	@include breakpoint(768px) {
+		#primary {
+			padding-right: 2em;
+			@include span(6 of 12);
+		}
+
+		#secondary {
+			@include span(6 of 12 last);
+		}
+	}
+
+	@include breakpoint(1024px) {
+		#primary {
+			@include span(8 of 12);
+		}
+
+		#secondary {
+			@include span(4 of 12 last);
+		}
+	}
+	
+}
+
+.site-header, .site-content, .site-footer, #registration {
+	clear: both;
+	padding: 2.5em; 
+	margin: -1em 0 0 0;
+	position: relative; 
+	overflow: hidden; 
+	border: 1px solid #BBB; 
+	border-radius: 0.5em;
+
+	@include background-image(linear-gradient(#EEE, #FFF 8em));
+	@include box-shadow(0 0 8px 0 #DDD, #FFF 0 0 0 1px inset);
+}
+
+.site-header {
+	margin-top: 0;
+}

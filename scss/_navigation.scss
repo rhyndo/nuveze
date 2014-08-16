@@ -1,0 +1,58 @@
+/* --- Navigation --- --- --- --- --- --- --- --- --- --- --- --- --- */
+
+.main-navigation {
+	padding: 1em 0;
+
+	ul { margin: 0; padding: 0; }
+
+	li { list-style: none outside; display: inline-block; }
+
+	a {
+		position: relative; 
+		display: block; 
+		padding: 0.5em 1em; 
+		color: #333; line-height: 1em; 
+
+		@include single-transition(all, 0.1s, ease-in);
+		@include border-radius(0.4em);
+		@include background-image(linear-gradient(#FFF, #EEE));
+		@include box-shadow(#DDD 0 0 0px 1px inset, #FFF 0 0 0px 2px inset);
+
+		span {
+			display: block; 
+
+			@include single-transition(all, 0.1s, ease-in);
+
+			&.label { padding-left: 40px; } 
+			&.value { padding-left: 40px; font-size: 0.8em; color: #CCC; }
+		}
+
+		span.icon {
+			width: 40px; height: 40px; 
+			font-size: 1.9em; line-height: 15px;
+			text-align: center; 
+			opacity: 0.1;
+			position: absolute; top: 5px; left: 5px;
+			font-family: 'Pictos', serif;
+
+			@include single-transition(all, 0.2s, ease-in);
+		}
+
+		&:hover {
+			background: #F4F4F4; 
+
+			@include background-image(linear-gradient(#EEE, #FFF));
+			@include box-shadow(#DDD 0 0 0px 1px inset, #FFF 0 0 0px 2px inset, #DDD 0 0 6px 0);
+
+			span.icon {
+				opacity: 1;
+				color: #369;
+			}
+
+			.label { color: #369; }
+			.value { color: #999; }
+		}
+	}
+
+}
+
