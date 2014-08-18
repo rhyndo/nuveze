@@ -20,20 +20,25 @@ $add: #abc63d;
 
 .button {
 	display: inline-block;
-	background: $green;
-	border: 0;
-	padding: 0.5em 1.2em;
-	font-size: 1em;
+	background: rgba(255,255,255,0.1);
+	padding: 0.8em 1.7em 0.7em 1.7em; 
+	border: solid 2px $nephritis;
+	color: darken($nephritis, 10);
 	cursor: pointer;
-	color: #fff;
 	border-radius: 0.3em;
 
 	-webkit-appearance: none;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
 	&:hover {
-		background-color: darken($green, 10);
+		border-color: #FFF;
+		background: $nephritis;
+		color: #FFF;
+		@include box-shadow(0 0 10px 0 rgba(0,0,0,0.3));
+		text-decoration: none !important;
 	}
+
+	@include single-transition(all, 0.2s, ease-in);
 
 	@include buttonColor( 'green', $green );
 	@include buttonColor( 'blue', $blue );
@@ -59,12 +64,13 @@ $add: #abc63d;
 	}
 
 	&[data-size=xs] {
-		padding: 0.1em 0.8em;
+		padding: 0.3em 0.9em 0.2em 0.9em;
+		line-height: 1.2;
+		text-align: center;
 
-
-		&, .label {
-			font-size: 0.8em;
-		}
+		/*&, .label {*/
+			/*font-size: 0.8em;*/
+		/*}*/
 	}
 
 	&[data-size=s] {
@@ -83,4 +89,7 @@ $add: #abc63d;
 		font-size: 1.5em;
 	}
 
+	&.registration {
+		span { display: block; }
+	}
 }

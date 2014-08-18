@@ -1,22 +1,21 @@
 /* --- Navigation --- --- --- --- --- --- --- --- --- --- --- --- --- */
 
 .main-navigation {
-	padding: 1em 0;
+	padding: 1.5em 0 0 0;
 
 	ul { margin: 0; padding: 0; }
 
-	li { list-style: none outside; display: inline-block; }
+	li { list-style: none outside; display: inline-block; margin: 0 1em 0 0; }
 
 	a {
 		position: relative; 
 		display: block; 
-		padding: 0.5em 1em; 
-		color: #333; line-height: 1em; 
-
-		@include single-transition(all, 0.1s, ease-in);
+		line-height: 1em; 
+		padding: 1em 1.5em 0.9em 1.5em; 
+		border: solid 2px #FFF;
+		color: #FFF;
+		@include single-transition(all, 0.2s, ease-in);
 		@include border-radius(0.4em);
-		@include background-image(linear-gradient(#FFF, #EEE));
-		@include box-shadow(#DDD 0 0 0px 1px inset, #FFF 0 0 0px 2px inset);
 
 		span {
 			display: block; 
@@ -39,11 +38,10 @@
 		}
 
 		&:hover {
-			background: #F4F4F4; 
-
-			@include background-image(linear-gradient(#EEE, #FFF));
-			@include box-shadow(#DDD 0 0 0px 1px inset, #FFF 0 0 0px 2px inset, #DDD 0 0 6px 0);
-
+			background: rgba(255,255,255,0.1); 
+			border: solid 2px rgba(0,0,0,0.4);
+			color: rgba(0,0,0,0.6);
+			
 			span.icon {
 				opacity: 1;
 				color: #369;

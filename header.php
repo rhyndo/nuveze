@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> <?php nuveze_html_classes(); ?>>
 <head>
 
 	<meta charset="<?php bloginfo( 'charset' ); ?>">

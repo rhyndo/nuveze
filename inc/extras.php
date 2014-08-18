@@ -20,14 +20,36 @@ add_filter( 'wp_page_menu_args', 'nuveze_page_menu_args' );
  * Adds custom classes to the array of body classes.
  */
 function nuveze_body_classes( $classes ) {
-	// Adds a class of group-blog to blogs with more than 1 published author
+
+	global $post;
+
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
+	}
+
+	if ( is_page() ) {
+		$classes[] = 'page-' . $post->post_name;
 	}
 
 	return $classes;
 }
 add_filter( 'body_class', 'nuveze_body_classes' );
+
+/**
+ * Adds custom classes to the array of body classes.
+ */
+function nuveze_html_classes() {
+
+	global $post;
+	$classes = array();
+
+	if ( is_page() ) {
+		$classes[] = 'html-' . $post->post_name;
+	}
+
+	// $classes;
+	echo ' class="' . $classes[0] . '"';
+}
 
 /**
  * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages

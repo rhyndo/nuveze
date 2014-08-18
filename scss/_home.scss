@@ -4,4 +4,70 @@
 	#registration {
 		clear: both;
 	}
+
+	.hentry {
+		background: none;
+		padding: 0;
+	}
+
+	.callout {
+		padding: 2em;
+		margin-bottom: 2em;
+		border-radius: 0.4em;
+		background: #fff;
+		overflow: hidden;
+
+		h2 { text-align: center; font-weight: normal; }
+		br { display: none; }
+
+		a.registration {
+			display: block;
+			text-align: center;
+			font-size: 1.4em;
+			margin-top: 1em;
+			position: relative;
+
+			&:before {
+				font-family: FontAwesome;
+				display: block;
+				line-height: 1;
+				font-size: 2em;
+				position: absolute; top: 20%; left: 0.8em;
+			}
+
+			&:first-child:before { 
+				content: '\f109';
+		   	}
+
+			&:last-child:before { 
+				content: '\f015';
+		   	}
+
+			@include breakpoint(1024px) {
+				width: 48%;
+				float: left;
+				&:first-child { margin-right: 4%; }
+			}
+
+			strong { display: block; font-weight: 500; font-size: 1.2em; }
+		}
+	}
+}
+
+.html-desktop {
+
+	&, body, 
+	.site, .site-header {
+		height: 100%; overflow: hidden;
+	}
+
+	.main-navigation,
+	.site-content,
+	.site-footer { display: none; }
+
+	.site-header {
+		font-size: 1.2em;
+		padding: 6em;
+	}
+
 }

@@ -19,7 +19,7 @@
 
 /* --- Stuff --- --- --- --- --- --- --- --- --- --- --- --- --- */
 body {
-	background: url("../images/brushed_alu/brushed_alu.png");
+	/*background: url("../images/brushed_alu/brushed_alu.png");*/
 	color: #444;
 } 
 
@@ -28,8 +28,14 @@ a {
 	color: #369;
 }
 
+.site-header {
+}
+
 .site-branding { 
-	@include text-shadow(rgba(white, 0.6) 2px 2px 0);
+}
+
+.site-title {
+	text-shadow: 2px 2px 0 rgba(0,0,0,0.4);
 }
 
 .site-title,
@@ -37,10 +43,19 @@ a {
 	line-height: 1;
 	margin: 0;
 	font-weight: 500;
+
+	&, a { color: #FFF; }
 }
 
 .site-description { 
 	font-weight: normal;
-	color: #666;
 	font-weight: 300;
+}
+
+.site-content {
+	color: #666;
+
+	h2, h3, h4, h5, h6 {
+		&, a { color: $wetasphalt; }
+	}
 }

@@ -9,21 +9,7 @@ $susy: (
 	gutter-position: inside,
 );
 
-body {
-	min-width: 320px;
-	padding: 1em;
-
-	@include breakpoint(768px) {
-		padding: 3em;
-	}
-}
-
 .site {
-
-	@include breakpoint(1440px) {
-		max-width: 1400px;
-		margin: auto;
-	}
 
 }
 
@@ -33,7 +19,7 @@ body {
 
 	@include breakpoint(768px) {
 		#primary {
-			padding-right: 2em;
+			padding-right: 4em;
 			@include span(6 of 12);
 		}
 
@@ -51,22 +37,65 @@ body {
 			@include span(4 of 12 last);
 		}
 	}
+
+	@include breakpoint(1280px) {
+		#primary {
+			padding-right: 6em;
+		}
+	}
 	
 }
 
 .site-header, .site-content, .site-footer, #registration {
-	clear: both;
-	padding: 2.5em; 
-	margin: -1em 0 0 0;
-	position: relative; 
-	overflow: hidden; 
-	border: 1px solid #BBB; 
-	border-radius: 0.5em;
 
-	@include background-image(linear-gradient(#EEE, #FFF 8em));
-	@include box-shadow(0 0 8px 0 #DDD, #FFF 0 0 0 1px inset);
+	@include breakpoint(768px) {
+		padding: 7em 6em;
+	}
+	
+	@include breakpoint(1280px) {
+		padding: 7em 8em;
+	}
+
+	@include breakpoint(1900px) {
+		padding: 9em 12em;
+	}
+	
+}
+
+.site-content {
+	/*padding: 5em 6em;*/
 }
 
 .site-header {
-	margin-top: 0;
+	@include bgrd-triangles(lighten($belizehole, 20));
+
+	@include breakpoint(1280px) {
+
+		.wrapper {
+			overflow: hidden;
+		}
+
+		.site-branding { 
+			float: left;
+		}
+
+		.main-navigation {
+			float: right;
+		}
+	}
+}
+
+.site-content, .site-footer {
+	a:hover { text-decoration: underline; }
+}
+
+.site-content {
+	background: #EEE;
+}
+
+.site-footer {
+	@include bgrd-triangles(lighten($midnightblue, 10));
+
+   	& { color: #FFF; }
+	a { font-style: italic; color: $sunflower; }
 }

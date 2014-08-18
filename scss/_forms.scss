@@ -57,12 +57,13 @@
 			input, textarea { color: #999; }
 		}
 
-		&.radio, &.checkbox {
-			padding-bottom: 0.8em; font-size: 0.9em;
+		.gfield_radio {
+			padding: 0;
 
-			label { margin-bottom: 0.5em; }
-			input, label[for] { display: inline-block; width: auto; margin: 0 0 0 0.2em; }
-			label[for] { color: #000; }
+			li { display: block; list-style: none outside; padding-left: 0.3em; }
+			input, label[for] { display: inline-block; width: auto; }
+			input { position: relative; bottom: 0.1em; }
+			label[for] { color: #000; padding: 0 0 0 0.6em; }
 		}
 
 		.gfield_description {
@@ -117,7 +118,7 @@
 		&.fcol.w67 { width: 66.7%; }
 		&.fcol.w7 { width: 70%; border-left: 0; }
 
-		&.fcol:first-of-type + .input.fcol { margin-top: 0; }
+		&.fcol:first-of-type + .gfield.fcol { margin-top: 0; }
 
 		&.fcol.w2 + .fcol.w2,
 		&.fcol.w2 + .fcol.w2 + .fcol.w2,
@@ -129,14 +130,14 @@
 		&.fcol.w33 + .fcol.w33,
 		&.fcol.w33 + .fcol.w33 + .fcol.w33,
 		&.fcol.w33 + .fcol.w67,
-		&.fcol.w5 + .fcol.w5 { border-left: 0; }
+		&.fcol.w5:nth-of-type(2n) { border-left: 0; }
 
 		&.fcol.w33:first-of-type + .fcol.w33 + .fcol.w33 { margin-top: 0; }
 
-		&.fcol.w25 + .fcol.w25 + .fcol.w25 + .fcol.w25 + .input,
-		&.fcol.w33 + .fcol.w33 + .fcol.w33 + .input,
-		&.fcol.w5 + .fcol.w5 + .input,
-		&.fcol.w3 + .fcol.w7 + .input:not(.fcol) { clear: both; border-top: 0; }
+		&.fcol.w25 + .fcol.w25 + .fcol.w25 + .fcol.w25 + .gfield,
+		&.fcol.w33 + .fcol.w33 + .fcol.w33 + .gfield,
+		&.fcol.w5 + .fcol.w5 + .gfield:not(.fcol),
+		&.fcol.w3 + .fcol.w7 + .gfield:not(.fcol) { clear: both; border-top: 0; }
 
 	}
 
@@ -162,3 +163,12 @@ input:-webkit-autofill:focus {
     -webkit-box-shadow: 0 0 0 50px white inset;
     -webkit-text-fill-color: #333;
 } 
+
+
+form.registration {
+	.gform_fields {
+		& > li {
+
+		}
+	}
+}

@@ -11,13 +11,13 @@ body {
 	@include breakpoint(768px) { 
 		font-size: 14px;
 
-		.site-branding { font-size: 1.2em; }
+		.site-branding { font-size: 1.4em; }
 	}
 
-	@include breakpoint(1024px) { 
-		font-size: 14px;
+	@include breakpoint(1280px) { 
+		font-size: 16px;
 
-		.site-branding { font-size: 1.4em; }
+		.site-branding { font-size: 1.6em; }
 	}
 }
 
@@ -40,6 +40,7 @@ h6 { font-size: 1.0em; }
 
 p {
 	padding-bottom: 1.5em;
+
 }
 
 ul, ol { 
@@ -48,6 +49,12 @@ ul, ol {
 	li {
 		list-style: inherit inside;
 	}
+}
+
+.hentry, blockquote {
+   p, ul, ol {
+	   &:last-child { padding-bottom: 0; }
+   }
 }
 
 

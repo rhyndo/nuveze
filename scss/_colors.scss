@@ -21,37 +21,66 @@ $asbestos                     : rgba(127,140,141,1);
 
 //Hex values
 
-$turquoise                    : #1ABC9C;
-$green-sea                    : #16A085;
-$emerland                     : #2ECC71;
-$nephritis                    : #27AE60;
-$peter-river                  : #3498DB;
-$belize-hole                  : #2980B9;
-$amethyst                     : #9B59B6;
-$wisteria                     : #8E44AD;
-$wet-asphalt                  : #34495E;
-$midnight-blue                : #2C3E50;
-$sun-flower                   : #F1C40F;
-$orange                       : #F39C12;
-$carrot                       : #E67E22;
-$pumpkin                      : #D35400;
-$alizarin                     : #E74C3C;
-$pomegranate                  : #C0392B;
-$clouds                       : #ECF0F1;
-$silver                       : #BDC3C7;
-$concrete                     : #95A5A6;
-$asbestos                     : #7F8C8D;
+/*$turquoise                    : #1ABC9C;*/
+/*$green-sea                    : #16A085;*/
+/*$emerland                     : #2ECC71;*/
+/*$nephritis                    : #27AE60;*/
+/*$peter-river                  : #3498DB;*/
+/*$belize-hole                  : #2980B9;*/
+/*$amethyst                     : #9B59B6;*/
+/*$wisteria                     : #8E44AD;*/
+/*$wet-asphalt                  : #34495E;*/
+/*$midnight-blue                : #2C3E50;*/
+/*$sun-flower                   : #F1C40F;*/
+/*$orange                       : #F39C12;*/
+/*$carrot                       : #E67E22;*/
+/*$pumpkin                      : #D35400;*/
+/*$alizarin                     : #E74C3C;*/
+/*$pomegranate                  : #C0392B;*/
+/*$clouds                       : #ECF0F1;*/
+/*$silver                       : #BDC3C7;*/
+/*$concrete                     : #95A5A6;*/
+/*$asbestos                     : #7F8C8D;*/
 
 /*
  * http://codepen.io/JasonWaller/pen/sGpib
  */
 
-@mixin bgrd_zigzag(){
+@mixin bgrd-zigzag($color){
 	background: 
-	linear-gradient(135deg, #ECEDDC 25%, transparent 25%) -50px 0,
-	linear-gradient(225deg, #ECEDDC 25%, transparent 25%) -50px 0,
-	linear-gradient(315deg, #ECEDDC 25%, transparent 25%),
-	linear-gradient(45deg, #ECEDDC 25%, transparent 25%);	
+		linear-gradient(135deg, $color 25%, transparent 25%) -50px 0,
+		linear-gradient(225deg, $color 25%, transparent 25%) -50px 0,
+		linear-gradient(315deg, $color 25%, transparent 25%),
+		linear-gradient(45deg, $color 25%, transparent 25%);	
 	background-size: 100px 100px;
-	background-color: #EC173A;
+	background-color: lighten($color, 2);
+}
+
+@mixin bgrd-jambox($color){
+	background:
+		linear-gradient(-45deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.03) 50%),
+		linear-gradient(45deg, rgba(0,0,0,0) 50%, rgba(255,255,255,0.1) 50%),
+		linear-gradient(315deg, $color 0, $color 25%, rgba(0,0,0,0) 25%),
+		linear-gradient(225deg, $color 0, $color 25%, rgba(0,0,0,0) 25%),
+		linear-gradient(135deg, $color 0, $color 25%, rgba(0,0,0,0) 25%),
+		linear-gradient(45deg, $color 0, $color 25%, rgba(0,0,0,0) 25%),
+		$color;
+	background-size: 5em 5em, 5em 5em, 25em 25em, 25em 25em, 25em 25em, 25em 25em;
+	background-position: auto auto, auto auto, -50px 0, -50px 0, auto auto, auto auto;
+}
+
+@mixin bgrd-triangles($color){
+	background: linear-gradient(-45deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.01) 50%), $color;
+	background-size: 5em 5em, 25em 25em;
+	background-position: auto auto, auto auto;
+}
+
+@mixin bgrd-stripes() {
+	background: repeating-linear-gradient(
+		45deg,
+		rgba(0, 0, 0, 0.2),
+		rgba(0, 0, 0, 0.2) 10px,
+		rgba(0, 0, 0, 0.3) 10px,
+		rgba(0, 0, 0, 0.3) 20px
+	);
 }

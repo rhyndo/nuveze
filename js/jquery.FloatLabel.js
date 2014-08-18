@@ -12,9 +12,9 @@
 
 			var element = $(this),
 			label = element.find('label'),
-			input = element.find('textarea, input');
+			input = element.find('textarea, input[type=text], input[type=password]');
 
-			if( input.val() != '' ) {
+			if( input.val() != '' && input.val() != undefined  ) {
 				element.addClass( settings.populatedClass );
 			}
 
